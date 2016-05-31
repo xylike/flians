@@ -34,8 +34,13 @@ node_modules
 
 
 config.js
+
 credentials.js
+
 public/plugins
+
 public/plugins_upgrade
+
 bin
+
 test
