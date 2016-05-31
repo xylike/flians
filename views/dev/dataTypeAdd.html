@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/plugins/bootstrap/css/bootstrap.min.css"> 
+	<link rel="stylesheet" type="text/css" href="/plugins_upgrade/select2/css/select2.css">
+ 
+	<link rel="stylesheet" type="text/css" href="/plugins/datepicker/css/bootstrap-datepicker3.min.css"> 
+	<link rel="stylesheet" type="text/css" href="/plugins/datetimepicker/css/bootstrap-datetimepicker.min.css">
+
+	<link rel="stylesheet" type="text/css" href="/plugins/icheck/skins/all.css">
+
+	<link rel="stylesheet" type="text/css" href="/plugins_upgrade/mmgrid/mmGrid.css">  
+	<link rel="stylesheet" type="text/css" href="/css/bsui.css"> 
+</head>
+<body class="bsui-window-body">
+	<div class="bsui-window-toolbar">
+		<a id="btnSave" class="btn btn-info btn-sm" role="button">
+			<i class="glyphicon glyphicon-floppy-disk"></i>
+			保存
+		</a>
+		<a id="btnEdit" class="btn btn-info btn-sm" role="button">
+			<i class="glyphicon glyphicon-pencil"></i>
+			修改
+		</a>
+		<a id="btnUndo" class="btn btn-info btn-sm" role="button">
+			<i class="glyphicon glyphicon-share-alt"></i>
+			撤消
+		</a>
+		<a id="btnDelete" class="btn btn-info btn-sm" role="button">
+			<i class="glyphicon glyphicon-minus"></i>
+			删除
+		</a>
+		<a id="btnClose" class="btn btn-default btn-sm" role="button">
+			<i class="glyphicon glyphicon-remove"></i>
+			关闭
+		</a>
+
+		<div class="input-group input-group-sm pull-right" style="width:150px; margin-left: 5px;">
+	      <input type="text" class="form-control" placeholder="查询关键词...">
+	      <span class="input-group-btn"> 
+	        <a href="javascript:;" class="btn btn-default" role="button">
+		        <i class="glyphicon glyphicon-search"></i> 
+	        </a>
+	      </span>
+	    </div> 
+		<div class="btn-group pull-right" role="group">
+		  <button type="button" class="btn btn-default btn-sm">
+		  	<i class="glyphicon glyphicon-step-backward"></i>
+		  </button>
+		  <button type="button" class="btn btn-default btn-sm">
+		  	<i class="glyphicon glyphicon-backward"></i>
+		  </button>
+		  <button type="button" class="btn btn-default btn-sm">
+		  	<i class="glyphicon glyphicon-forward"></i>
+		  </button>
+		  <button type="button" class="btn btn-default btn-sm">
+		  	<i class="glyphicon glyphicon-step-forward"></i>
+		  </button>
+		</div>
+	</div>
+	<div class="bsui-windown-content">
+		<form class="bsui-simple-form">
+			 
+		</form>
+	</div>
+	<script type="text/javascript" src="/plugins/jquery.min.js"></script>
+	<script type="text/javascript" src="/plugins/jquery.form.js"></script>
+	<script type="text/javascript" src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/plugins/layer/layer.js"></script>
+	<script type="text/javascript" src="/plugins/datepicker/js/bootstrap-datepicker.min.js"></script> 
+	<script type="text/javascript" src="/plugins/datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+	<script type="text/javascript" src="/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="/plugins/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+	<script type="text/javascript" src="/plugins_upgrade/select2/js/select2.min.js"></script>
+	<script type="text/javascript" src="/plugins_upgrade/select2/js/i18n/zh-CN.js"></script> 
+	<script type="text/javascript" src="/plugins/icheck/icheck.js"></script>
+	<script type="text/javascript" src="/plugins_upgrade/mmgrid/mmGrid.js"></script>
+ 
+	<script type="text/javascript" src="/js/bsui.js"></script>
+	<script type="text/javascript">
+		$(function(){ 
+			var columns = {{{viewData.columns}}};  
+			var primaryKey = ''; 
+	   		$.each(columns, function(i, item){ 
+	   			if(item.bIsHidden===true) return;
+	   			if(item.bIsPrimaryKey === true){
+	   				primaryKey = item.cFieldName;
+	   				bsui.label($('.bsui-simple-form'), {
+						labelName: item.cFieldDesc,
+						text: '',
+						singleColumn: true,
+						id: item.cFieldName,
+						name: item.cFieldName
+					});
+	   			}
+	   			else if(item.cCtrlType === 'text' || item.cCtrlType === 'number'){
+	   				var textboxOpts = {
+			   			id: item.cFieldName,
+			   			name: item.cFieldName,
+			   			labelName: item.cFieldDesc,
+			   			required: (item.bIsNull === false),
+			   			singleColumn: true
+			   		}; 
+	   				bsui.textbox($('.bsui-simple-form'), textboxOpts)
+	   			}
+	   			else if(item.cCtrlType === 'radio'){
+	   				var data = JSON.parse(item.cCtrlData);
+	   				bsui.radiolist($('.bsui-simple-form'), {
+			   			id: item.cFieldName,
+			   			name: item.cFieldName,
+			   			labelName: item.cFieldDesc,
+			   			required: (item.bIsNull === false),
+			   			data: data,
+			   			singleColumn: true
+			   		});
+	   			}
+	   			else if(item.cCtrlType === 'selectbox'){
+	   				var data = JSON.parse(item.cCtrlData);
+	   				bsui.selectbox($('.bsui-simple-form'), {
+	   					id: item.cFieldName,
+			   			name: item.cFieldName,
+			   			labelName: item.cFieldDesc,
+			   			required: (item.bIsNull === false),
+			   			data: data,
+			   			singleColumn: true
+	   				});
+	   			}
+	   		});  
+
+	   		$('#btnClose').on('click', function(){ 
+	   			bsui.closeWindow();
+	   		});
+	   		
+
+
+
+	   		var onclick_btnSave = function(){
+	   			var errmsg = bsui.validations($('.bsui-simple-form'));
+	   			if(errmsg !== ''){
+	   				layer.msg(errmsg, {icon: 2});
+	   			}
+	   			return;
+	   			var me = this;
+	   			$('.bsui-simple-form').ajaxSubmit({
+	   				type: 'POST',
+	   				url: '/dev/dataTypeSave',
+	   				success: function(result){
+	   					// console.log(result);
+	   					if(result.newId){
+	   						var jqPrimaryKye = $('#' +primaryKey);
+	   						jqPrimaryKye.val(result.newId); 
+	   						jqPrimaryKye.next().html(result.newId);
+	   						
+	   						unEditStatus();
+	   					}
+	   				}
+	   			});
+	   		};
+	   		var onclick_btnUndo = function(){
+	   			unEditStatus();
+	   		};
+	   		var onclick_btnEdit = function(){
+	   			editStatus();
+	   		};
+	   		var onclick_btnDelete = function(){};
+
+	   		var editStatus = function(){
+	   			bsui.enableButton('btnSave', onclick_btnSave);
+		   		bsui.enableButton('btnUndo', onclick_btnUndo);
+		   		bsui.disableButton('btnEdit');
+		   		bsui.disableButton('btnDelete'); 
+				$('.bsui-simple-form').find('input').attr('disabled', false); 
+				$('.bsui-simple-form').find('select').attr('disabled', false); 
+	   		};
+	   		var unEditStatus = function(){ 
+	   			bsui.disableButton('btnSave');
+				bsui.disableButton('btnUndo');
+				bsui.enableButton('btnEdit', onclick_btnEdit);
+				bsui.enableButton('btnDelete', onclick_btnDelete);
+				$('.bsui-simple-form').find('input').attr('disabled', true); 
+				$('.bsui-simple-form').find('select').attr('disabled', true); 
+	   		};
+
+	   		editStatus();
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/plugins/datepicker/css/bootstrap-datepicker3.min.css"> 
+	<link rel="stylesheet" type="text/css" href="/plugins_upgrade/select2/css/select2.css">
+	<link rel="stylesheet" type="text/css" href="/plugins/prettyCheckable/disk/prettyCheckable.css">
+	<link rel="stylesheet" type="text/css" href="/css/bsui.css">
+	<style type="text/css">
+	.page-tips{
+		height: 42px;
+		line-height: 42px;
+		background:#fff;
+		margin:20px 0;
+		padding: 0 10px;
+		color: #FFAE37;
+	}
+	.page-left-panel{
+		min-height:150px; 
+		width:100%; 
+		background-color: #fff;
+		margin-bottom: 15px;
+	}
+	.page-right-panel{
+		min-height:150px; 
+		width:100%; 
+		background-color: #fff;
+		margin-bottom: 15px;
+	}
+	</style>
+</head>
+<body class="bsui-container bsui-container-padding bsui-gray-bg">
+	<div class="page-tips">
+	<div style="display: inline-block; width:calc(100% - 65px); white-space:nowrap; overflow: hidden;">阿里云管理控制台计划于2016年6月1日开始不再保障IE8浏览器下的可用性。建议您尽快升级浏览器，或者使用Chrome、Firefox。</div>
+	<a href="javascript:;" class="btn btn-default btn-xs" style="margin-top: -17px; vertical-align: text-top;">不再显示</a>
+	</div>
+ 	<div class="row">
+ 		<div class="col-sm-9">
+ 			<div class="page-left-panel">
+ 				<a id="btnReferTreeView" href="javascript:;" class="btn btn-default btn-sm">TreeView参照</a>
+ 				<a id="btnReferGridView" href="javascript:;" class="btn btn-default btn-sm">GridView参照</a>
+ 				<a id="btnReferNavTree" href="javascript:;" class="btn btn-default btn-sm">NavTree参照</a>
+ 			</div>
+ 			<div class="page-left-panel">
+ 				<a id="btnFilter" href="javascript:;" class="btn btn-default btn-sm">查询条件模板</a>
+ 			</div>
+ 			<div class="page-left-panel">
+ 				
+ 			</div>
+ 			<div class="page-left-panel">
+ 				
+ 			</div>
+ 			<div class="page-left-panel">
+ 				
+ 			</div>
+ 			<div class="page-left-panel">
+ 				
+ 			</div>
+ 		</div>
+ 		<div class="col-sm-3">
+ 			<div class="page-right-panel">
+ 				
+ 			</div>
+ 			<div class="page-right-panel" style="height: 300px;">
+ 				<input type="text" data-myattr="对面的女孩看过来，看过来，看过来" id="username" value="admin">
+ 				<a id="btnShowResult" href="javascript:;" class="btn btn-primary">结果</a>
+ 			</div>
+ 		</div>
+ 	</div>
+ 	<div id="dialog">
+ 		<select class="form-control"><option>年龄</option><option>年龄</option></select>
+ 	</div>
+ 	<script type="text/javascript" src="/plugins/jquery.min.js"></script>
+ 	<script type="text/javascript" src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+ 	<script type="text/javascript" src="/plugins/datepicker/js/bootstrap-datepicker.min.js"></script> 
+ 	<script type="text/javascript" src="/plugins_upgrade/select2/js/select2.min.js"></script>
+ 	<script type="text/javascript" src="/plugins/prettyCheckable/disk/prettyCheckable.min.js"></script>
+ 	<script type="text/javascript" src="/plugins/layer/layer.js"></script> 
+ 	<script type="text/javascript" src="/js/bsui.js"></script>
+ 	<script type="text/javascript">
+ 		$(function(){
+ 			$('#btnReferTreeView').on('click', function(){
+ 				bsui.openTopWindow({title: '基本参照', content: '/ref?type=tv'});
+ 			});
+ 			$('#btnReferGridView').on('click', function(){
+ 				bsui.openParentWindow({title: '基本参照', content: '/ref?type=gv', area:['750px', '530px']});
+ 			});
+ 			$('#btnReferNavTree').on('click', function(){
+ 				bsui.openTopWindow({title: '基本参照', content: '/ref?type=nt'});
+ 			});
+ 			$('#btnFilter').on('click', function(){
+ 				// bsui.openWindow({title: '查询条件', content: '/filter'});
+
+ 				var filterContent = $('<div>',{
+ 					class: 'bsui-window-body'
+ 				}); 
+
+
+ 				var item1 = $('<div>',{
+ 					class: 'bsui-filter-input-group'
+ 				}).append($('<label>').html('用户姓名'))
+ 				.append($('<div>',{
+ 					class: 'filter-input-control'
+ 				}).append($('<div>',{
+ 					class: 'input-group input-group-sm'
+ 				}).append($('<input/>', {
+ 					type: 'text',
+ 					class: 'form-control'
+ 				}))));
+ 				var item2 = $('<div>',{
+ 					class: 'bsui-filter-input-group'
+ 				}).append($('<label>').html('到'))
+ 				.append($('<div>',{
+ 					class: 'filter-input-control'
+ 				}).append($('<div>',{
+ 					class: 'input-group input-group-sm'
+ 				}).append($('<input/>', {
+ 					type: 'text',
+ 					class: 'form-control'
+ 				}))));
+ 				var item3 = $('<div>',{
+ 					class: 'bsui-filter-input-group'
+ 				}).append($('<label>').html('用户姓名'))
+ 				.append($('<div>',{
+ 					class: 'filter-input-control'
+ 				}).append($('<div>',{
+ 					class: 'input-group input-group-sm'
+ 				}).append($('<input/>', {
+ 					type: 'text',
+ 					class: 'form-control'
+ 				}))));
+
+
+					/*<div class="bsui-input-control">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search for...">
+					      	<span class="input-group-btn">
+						        <a class="btn btn-default" role="button">
+						        	<i class="glyphicon glyphicon-search"></i>
+						        </a>
+					        </span>
+						</div>
+					</div>*/
+					var item4 = $('<div>',{
+	 					class: 'bsui-filter-input-group'
+	 				}).append($('<label>').html('用户姓名'))
+	 				.append($('<div>',{
+	 					class: 'filter-input-control'
+	 				}).append($('<div>',{
+	 					class: 'input-group input-group-sm'
+	 				}).append($('<input/>', {
+	 					type: 'text',
+	 					class: 'form-control',
+	 					placeholder: 'Search for...'
+	 				})).append(
+	 					$('<span>',{
+	 						class: 'input-group-btn'
+	 					}).append($('<a>',{
+	 						class: 'btn btn-default',
+	 						role: 'button'
+	 					}).append($('<i>',{
+		 						class: 'glyphicon glyphicon-search'
+			 					})
+		 					)
+	 					)
+	 				)));
+
+	 				var item5 = $('<div>',{
+	 					class: 'bsui-filter-input-group'
+	 				}).append($('<label>').html('日期'))
+	 				.append($('<div>',{
+	 					class: 'filter-input-control'
+	 				}).append($('<div>',{
+	 					class: 'input-group input-group-sm'
+	 				}).append($('<input/>', {
+	 					type: 'text',
+	 					class: 'form-control date'
+	 				}))));
+	 				var item6 = $('<div>',{
+	 					class: 'bsui-filter-input-group'
+	 				}).append($('<label>').html('下拉框'))
+	 				.append($('<div>',{
+	 					class: 'filter-input-control'
+	 				}).append($('<div>',{
+	 					class: 'input-group input-group-sm'
+	 				}).append($('<select>', { 
+	 					class: 'form-control'
+	 				}).html('<option>年龄</option><option>性别</option>')
+	 				)));
+
+	 				var item7 = $('<div>',{
+	 					class: 'bsui-filter-input-group'
+	 				}).append($('<label>').html('复选框'))
+	 				.append($('<div>',{
+	 					class: 'filter-input-control',
+	 					style: 'margin-top:7px;'
+	 				}).append($('<input/>',{
+	 					type: 'checkbox',
+	 					'data-label': '',
+	 					class: 'xxx'
+	 				}
+	 				)));
+	 				var item8 = $('<div>',{
+	 					class: 'bsui-filter-input-group'
+	 				}).append($('<label>').html('到'))
+	 				.append($('<div>',{
+	 					class: 'filter-input-control'
+	 				}).append($('<div>',{
+	 					class: 'input-group input-group-sm'
+	 				}).append($('<input/>', {
+	 					type: 'text',
+	 					class: 'form-control'
+	 				}))));
+	 				var item9 = $('<div>',{
+	 					class: 'bsui-filter-input-group'
+	 				}).append($('<label>').html('日常作业'))
+	 				.append($('<div>',{
+	 					class: 'filter-input-control'
+	 				}).append($('<div>',{
+	 					class: 'input-group input-group-sm'
+	 				}).append($('<input/>', {
+	 					type: 'text',
+	 					class: 'form-control'
+	 				}))));
+	 				 
+ 				filterContent.append(item1).append(item2).append(item3).append(item4)
+ 				.append(item5).append(item6).append(item7).append(item8).append(item9);
+
+ 				var buttonsPanel = $('<div>',{
+ 					class: 'bsui-window-buttons'
+ 				}).append(
+ 					$('<a>', {
+ 						class: 'btn btn-primary btn-sm',
+ 						role: 'button'
+ 					}).html('<i class="glyphicon glyphicon-ok"></i> 确定')
+ 				).append(
+ 					$('<a>', {
+ 						class: 'btn btn-default btn-sm',
+ 						role: 'button'
+ 					}).html('<i class="glyphicon glyphicon-remove"></i> 取消')
+ 				);
+ 				var ht = $('<div>').append(filterContent).append(buttonsPanel);
+ 				var options = {
+ 					type:1,
+ 					content: ht.html()
+ 				};
+ 				bsui.openWindow(options);
+ 				$('.form-control.date').datepicker({
+		    		language:'zh-CN',
+		    		format:'yyyy-mm-dd',
+		    		autoclose:true
+		    	}); 
+		    	$('select').select2({
+	 				// language:'zh-CN',
+	 				placeholder:'参照定义过滤字段',
+	 				minimumResultsForSearch: Infinity,
+	 				allowClear: true
+	 			});
+	 			$('input.xxx').prettyCheckable();
+ 			});
+ 			
+ 			$('#btnShowResult').on('click', function(){
+ 				// $('#username').attr('data-bsvalue', 'xxxx');
+ 				alert($('#username').data('reftext'));
+ 			});
+ 		})
+ 	</script>
+
+</body>
+</html>

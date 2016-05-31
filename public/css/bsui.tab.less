@@ -1,0 +1,93 @@
+.bsui-tabs{
+    height: 100%; 
+    > .bsui-nav{
+        height: 42px;
+        overflow: hidden;
+        position: relative;
+        > a{
+            &.bsui-tab-btn{
+                display: block;
+                width: 16px;
+                text-decoration: none;
+                text-align: center;
+                height: 42px;
+                line-height: 42px;
+                position: absolute;
+                z-index: 99; 
+                background-color: #e7e5e5;
+                border-bottom: 1px solid #dfdfdf;
+                color: #555;
+                cursor: pointer;
+                &.bsui-btn-left{
+                    left: 0; 
+                }
+                &.bsui-btn-right{
+                    right: 0;
+                }
+                &:hover{
+                    background-color: #dad9d9;
+                }
+            }
+        }
+
+        > ul{
+            &.nav-tabs{
+                background: #f2f2f2; 
+                width: 9999999px;
+                left: 0; 
+                position: absolute;
+                z-index: 1;
+                > li{
+                    position: relative;
+                    > a{
+                        margin-right:-1px;  
+                        &.enable-close{
+                            padding-right:25px;
+                        } 
+                        &:hover{
+                            background-color: #dfdfdf;
+                        } 
+                    } 
+                    &.active{
+                        > a{
+                            &:hover{
+                                background-color: #fff;
+                            }
+                        }
+                    }
+                    .btn-close{
+                        position: absolute;
+                        width:16px;
+                        height: 16px;
+                        text-decoration: none;
+                        text-align: center;
+                        display: block; 
+                        font-size:12px;
+                        top: 2px;
+                        right: 2px;
+                        -webkit-transform:scale(0.8);    
+                        color: #888;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: #dfdfdf;
+                            border-radius: 50px;
+                            color: #555;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    > .tab-content{ 
+        height: calc(~"100% - 42px");
+        > .tab-pane{
+            height: 100%; 
+            overflow: hidden;
+            iframe{
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+        }
+    }
+}

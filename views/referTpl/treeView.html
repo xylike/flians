@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/plugins/bootstrap/css/bootstrap.min.css"> 
+	<link rel="stylesheet" type="text/css" href="/plugins/zTree/css/zTreeStyle/zTreeStyle.css">
+	<link rel="stylesheet" type="text/css" href="/css/bsui.css">
+</head>
+<body>  
+ 	<div class="bsui-window-buttons"> 
+ 		<a href="javascript:;" class="btn btn-default btn-sm">
+			<i class="glyphicon glyphicon-refresh"></i>
+			刷新
+		</a> 
+		<a href="javascript:;" class="btn btn-primary btn-sm">
+			<i class="glyphicon glyphicon-ok"></i>
+			确定
+		</a>
+		<a id="btnCancel" href="javascript:;" class="btn btn-default btn-sm">
+			<i class="glyphicon glyphicon-remove"></i>
+			取消
+		</a> 
+	</div>
+	<div class="bsui-window-body" style="padding-bottom:50px;">
+		<div style="height: 100%; overflow: auto;">
+			<ul id="treeDemo" class="ztree"></ul>			
+		</div>
+	</div>
+ 	<script type="text/javascript" src="/plugins/jquery.min.js"></script> 
+ 	<script type="text/javascript" src="/plugins/zTree/js/jquery.ztree.core.min.js"></script>
+	<script type="text/javascript" src="/js/bsui.js"></script>
+	<script type="text/javascript">
+ 		
+ 		// bsui.setReturnValueAndText('homePage', 'username', 'root', '超级管理员');
+ 		$(function(){
+ 			var zTreeObj;
+		   // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
+		   var setting = {};
+		   // zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
+		   var zNodes = [
+			    {name:"中华人民共和国", open:true, children:[
+			      	{name:"广东省", open:true, children:[
+				      	{name:"珠海市"}, 
+				      	{name:"阳春市"}
+			      	]}, 
+			      	{name:"湖南省"}
+		      	]}
+		   ];
+		   zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		   $('#btnCancel').on('click', function(){
+		   		bsui.closeTopWindow();
+		   });
+ 		});
+ 	</script>
+</body>
+</html>

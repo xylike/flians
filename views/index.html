@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{{title}}首页</title>
+	<link rel="stylesheet" type="text/css" href="/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/plugins/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/plugins/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/bsui.css">
+	<link rel="stylesheet" type="text/css" href="/css/bsui.tabs.css">
+	<style type="text/css">
+	body{
+		overflow: hidden;
+	}
+	</style>
+</head>
+<body>
+	<!-- 顶部导航 -->
+	 <nav class="navbar navbar-default navbar-fixed-top top-navbar">
+	 	<div class="navbar-header">
+	 		<a href="javascript:;" class="navbar-brand logo">
+	 			<img src="/img/logo.png" alt="" width="32px" height="32px">
+	 		</a>
+	 		<a class="navbar-brand" href="#">{{title}}</a>
+	 	</div>
+
+	 	<ul class="nav navbar-nav pull-left  hidden-xs hidden-sm">
+	 		<li class="dropdown">
+	 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">产品与服务<span class="caret"></span></a>
+	 			<div class="dropdown-menu" style="height:500px; width: 900px;">
+	 				aaa
+	 			</div>
+	 		</li> 
+	 	</ul>
+
+	 	<ul class="nav navbar-nav pull-right  hidden-xs">
+	 		<li>
+		 		<a href="#" data-tabid="gridView" url="/menu?type=gv" class="hidden-sm">
+			 		<i class="glyphicon glyphicon-th"></i>
+			 		数据列表
+		 		</a>
+	 		</li>
+	 		<li>
+		 		<a href="#" data-tabid="masterSlaveForm" url="/menu?type=msf" class="hidden-sm">
+			 		<i class="glyphicon glyphicon-book"></i>
+			 		复杂档案
+		 		</a>
+	 		</li>
+		 	<li>
+		 		<a href="javascript:;" data-tabid="mobilephone" url="/menu?type=sf" class="hidden-sm">
+			 		<i class="glyphicon glyphicon-list"></i>
+			 		列表档案
+		 		</a>
+	 		</li>
+		 	<li><a href="#" data-tabid="singleEditForm" url="/menu?type=sef" class="hidden-sm">可编辑列表档案</a></li>
+	 		<li> 
+	 			<a href="#" class="hidden-sm"><span class="fa fa-bell animated infinite swing"></span>消息</a>
+ 			</li>
+	 		<li class="dropdown hidden-xs hidden-sm">
+	 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+	 			<span class="fa fa-home"></span>帮助与文档<span class="caret"></span></a>
+	 			<ul class="dropdown-menu">
+	 				<li>
+	 					<a href="#">帮助与文档</a>
+	 				</li>
+	 				<li>
+	 					<a href="#">论坛</a>
+	 				</li>
+	 				<li>
+	 					<a href="#">博客</a>
+	 				</li>
+	 			</ul>
+	 		</li>
+	 		<li class="dropdown">
+	 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+	 			<span class="fa fa-user"></span>xutengyi2012@163.com<span class="caret"></span></a>
+	 			<ul class="dropdown-menu"> 
+	 				<li>
+	 					<a href="/">退出</a>
+	 				</li>
+	 			</ul>
+	 		</li>
+	 	</ul>
+
+	 </nav> 
+	 <!-- 左则导航 -->
+	 <div class="fixed-sidebar"> 
+ 		<a href="#" id="fixed-sidebar-control"><i class="fa fa-bars fa-rotate-90"></i></a>
+ 		<div class="fixed-sidebar-content">
+ 			<ul id="side-menu">
+	 			<li>
+	 				<a href="javascript:;" data-toggle="tooltip" data-container="body" data-placement="right" title="表单模板">
+	 					<span class="sidebar-label collapsed" data-toggle="collapse" href="#fnlist">
+	 						<span class="caret"></span>
+	 						<span class="sidebar-text">表单模板</span>
+	 					</span> 
+	 					<span class="fa fa-cog" data-toggle="tooltip" data-container="body" data-placement="right" title="自定义快捷入口" onclick="alert(0)"></span>
+	 				</a>
+	 				<ul class="collapse" id="fnlist">
+	 					<li>
+	 						<a href="#"  data-tabid="gv123343" data-url="/menu?type=gv"  data-toggle="tooltip" data-container="body" data-placement="right" title="数据列表">
+	 							<span class="fa fa-plus"></span>
+	 							<span class="menu-text">数据列表</span>
+	 						</a>
+	 					</li>
+	 					<li>
+	 						<a href="#"  data-tabid="sf323123" data-url="/menu?type=sf"  data-toggle="tooltip" data-container="body" data-placement="right" title="简单档案编辑">
+	 							<span class="fa fa-plus"></span>
+	 							<span class="menu-text">简单档案编辑</span>
+	 						</a>
+	 					</li>
+	 					<li>
+	 						<a href="#"  data-tabid="sef121212" data-url="/menu?type=sef"  data-toggle="tooltip" data-container="body" data-placement="right" title="简单档案编辑列表">
+	 							<span class="fa fa-plus"></span>
+	 							<span class="menu-text">简单档案编辑列表</span>
+	 						</a>
+	 					</li>
+	 					<li>
+	 						<a href="#"  data-tabid="msf123123" data-url="/menu?type=msf"  data-toggle="tooltip" data-container="body" data-placement="right" title="复杂档案编辑">
+	 							<span class="fa fa-plus"></span>
+	 							<span class="menu-text">复杂档案编辑</span>
+	 						</a>
+	 					</li> 
+	 					<li>
+	 						<a href="#"  data-tabid="voucher" data-url="/menu?type=vch"  data-toggle="tooltip" data-container="body" data-placement="right" title="表单">
+	 							<span class="fa fa-plus"></span>
+	 							<span class="menu-text">表单</span>
+	 						</a>
+	 					</li>
+	 					<li>
+	 						<a href="#"  data-tabid="tcf123123" data-url="/menu?type=tcf"  data-toggle="tooltip" data-container="body" data-placement="right" title="树型分类档案">
+	 							<span class="fa fa-plus"></span>
+	 							<span class="menu-text">树型分类档案</span>
+	 						</a>
+	 					</li> 
+	 					<li>
+	 						<a data-tabid="group" href="javascript:;" data-url="/menu?type=tef"  data-toggle="tooltip" data-container="body" data-placement="right" title="树型编辑档案">
+	 							<span class="fa fa-group"></span>
+	 							<span class="menu-text">树型编辑档案</span>
+	 						</a>
+	 					</li>
+	 					<li>
+	 						<a data-tabid="privilege" data-url="/menu?type=tnf" href="javascript:;"  data-toggle="tooltip" data-container="body" data-placement="right" title="树型导航档案">
+	 							<span class="fa fa-user"></span>
+	 							<span class="menu-text">树型导航档案</span>
+	 						</a>
+	 					</li>
+	 				</ul> 
+	 			</li> 
+	 			
+				 
+				 <li>
+	 				<a href="javascript:;" data-toggle="tooltip" data-container="body" data-placement="right" title="参照模板">
+	 					<span class="sidebar-label collapsed" data-toggle="collapse" data-href="#flist2">
+	 						<span class="caret"></span>
+	 						<span class="sidebar-text">参照模板</span>
+	 					</span> 
+	 					<span class="fa fa-cog" data-toggle="tooltip" data-container="body" data-placement="right" title="自定义快捷入口" onclick="alert(0)"></span>
+	 				</a>
+	 				<ul class="collapse" id="flist2">
+	 					<li>
+	 						<a data-tabid="tv123213" url="/ref?type=tv" href="javascript:;"  data-toggle="tooltip" data-container="body" data-placement="right" title="TreeView参照">
+	 							<span class="fa fa-group"></span>
+	 							<span class="menu-text">TreeView参照</span>
+	 						</a>
+	 					</li>
+	 					<li>
+	 						<a href="#"  data-toggle="tooltip" data-container="body" data-placement="right" title="权限管理">
+	 							<span class="fa fa-user"></span>
+	 							<span class="menu-text">权限管理</span>
+	 						</a>
+	 					</li>
+	 					<li>
+	 						<a href="#"  data-toggle="tooltip" data-container="body" data-placement="right" title="客户管理">
+	 							<span class="fa fa-edge"></span>
+	 							<span class="menu-text">客户管理</span>
+	 						</a>
+	 					</li>
+	 				</ul> 
+	 			</li> 
+
+
+	 			<li>
+	 				<a href="javascript:;" data-toggle="tooltip" data-container="body" data-placement="right" title="用户中心">
+	 					<span class="sidebar-label collapsed" data-toggle="collapse" href="#flist3">
+	 						<span class="caret"></span>
+	 						<span class="sidebar-text">用户中心</span>
+	 					</span> 
+	 					<span class="fa fa-cog" data-toggle="tooltip" data-container="body" data-placement="right" title="自定义快捷入口" onclick="alert(0)"></span>
+	 				</a>
+	 				<ul class="collapse" id="flist3"> 
+	 					<li>
+	 						<a href="#"  data-toggle="tooltip" data-container="body" data-placement="right" title="权限管理">
+	 							<span class="fa fa-user"></span>
+	 							<span class="menu-text">权限管理</span>
+	 						</a>
+	 					</li>
+	 					<li>
+	 						<a href="#"  data-toggle="tooltip" data-container="body" data-placement="right" title="客户管理">
+	 							<span class="fa fa-edge"></span>
+	 							<span class="menu-text">客户管理</span>
+	 						</a>
+	 					</li>
+	 				</ul> 
+	 			</li> 
+
+
+				<li>
+	 				<a href="javascript:;" data-toggle="tooltip" data-container="body" data-placement="right" title="用户中心">
+	 					<span class="sidebar-label collapsed" data-toggle="collapse" href="#flist4">
+	 						<span class="caret"></span>
+	 						<span class="sidebar-text">用户中心</span>
+	 					</span> 
+	 					<span class="fa fa-cog" data-toggle="tooltip" data-container="body" data-placement="right" title="自定义快捷入口" onclick="alert(0)"></span>
+	 				</a>
+	 				<ul class="collapse" id="flist4">
+	 					<li>
+	 						<a href="#"  data-toggle="tooltip" data-container="body" data-placement="right" title="群组管理">
+	 							<span class="fa fa-group"></span>
+	 							<span class="menu-text">群组管理</span>
+	 						</a>
+	 					</li>
+	 					<li>
+	 						<a href="#"  data-toggle="tooltip" data-container="body" data-placement="right" title="权限管理">
+	 							<span class="fa fa-user"></span>
+	 							<span class="menu-text">权限管理</span>
+	 						</a>
+	 					</li>
+	 					<li>
+	 						<a href="#"  data-toggle="tooltip" data-container="body" data-placement="right" title="客户管理">
+	 							<span class="fa fa-edge"></span>
+	 							<span class="menu-text">客户管理</span>
+	 						</a>
+	 					</li>
+	 				</ul> 
+	 			</li> 
+
+
+
+				<li>
+	 				<a href="javascript:;" data-toggle="tooltip" data-container="body" data-placement="right" title="用户中心">
+	 					<span class="sidebar-label collapsed" data-toggle="collapse" href="#flist5">
+	 						<span class="caret"></span>
+	 						<span class="sidebar-text">用户中心</span>
+	 					</span> 
+	 					<span class="fa fa-cog" data-toggle="tooltip" data-container="body" data-placement="right" title="自定义快捷入口" onclick="alert(0)"></span>
+	 				</a>
+	 				<ul class="collapse" id="flist5">
+	 					<li>
+	 						<a href="#"  data-toggle="tooltip" data-container="body" data-placement="right" title="群组管理">
+	 							<span class="fa fa-group"></span>
+	 							<span class="menu-text">群组管理</span>
+	 						</a>
+	 					</li>
+	 					<li>
+	 						<a href="#"  data-toggle="tooltip" data-container="body" data-placement="right" title="权限管理">
+	 							<span class="fa fa-user"></span>
+	 							<span class="menu-text">权限管理</span>
+	 						</a>
+	 					</li>
+	 					<li>
+	 						<a href="#"  data-toggle="tooltip" data-container="body" data-placement="right" title="客户管理">
+	 							<span class="fa fa-edge"></span>
+	 							<span class="menu-text">客户管理 end</span>
+	 						</a>
+	 					</li>
+	 				</ul> 
+	 			</li> 
+
+	 			
+	 		</ul>
+ 		</div>
+	 </div>
+	 <div class="page-content"> 
+	 	<div class="col-md-12">
+	 		<div id="tabs"></div> 
+    	</div>
+	 </div>
+
+	<script type="text/javascript" src="/plugins/jquery.min.js"></script>
+	<script type="text/javascript" src="/plugins/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript" src="/plugins/layer/layer.js"></script>
+	<script type="text/javascript" src="/plugins/bootstrap/js/bootstrap.min.js"></script> 
+	<script type="text/javascript" src="/js/bsui.js"></script>
+	<script type="text/javascript" src="/js/bsui.tabs.js"></script>
+	<!--[if lt IE 9]>
+          <script src="/plugins/html5.js"></script>
+          <script src="/plugins/respond.js"></script>
+    <![endif]-->
+	<script type="text/javascript" src="/js/index.js"></script>
+	<script type="text/javascript">
+        $(function(){
+            $('#tabs').navTabs();
+        	$('#tabs').navTabs('addTab',{id: 'homePage', allowClose: false, title: '<i class="glyphicon glyphicon-home"></i> 我的桌面', url:'/homePage', iframe: true}); 
+        })
+    </script>
+</body>
+</html>

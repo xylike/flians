@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{title}}</title>
+	<link rel="stylesheet" type="text/css" href="/plugins/bootstrap/css/bootstrap.min.css"> 
+	<link rel="stylesheet" type="text/css" href="/plugins/metisMenu/metisMenu.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/bsui.css"> 
+	<link rel="stylesheet" type="text/css" href="/css/bsui.tabs.css">
+	<link rel="stylesheet" type="text/css" href="/css/dev/index.css">
+</head>
+<body>
+	<a class="sidebar-control">
+		<i class="glyphicon glyphicon-chevron-left"></i>
+	</a>
+	<div class="dev-west">
+		<div class="dev-logo"> 
+		</div> 
+		<div class="dev-menu">
+		    <ul class="nav" id="side-menu"> 
+	            <li>
+	                <a data-tabid="dashbord" data-url="http://www.baidu.com"><i class="glyphicon glyphicon-film"></i> Dashboard</a>
+	            </li>
+	            <li>
+	                <a href="#"><i class="glyphicon glyphicon-eur"></i> Charts<span class="glyphicon arrow"></span></a>
+	                <ul class="nav nav-second-level">
+	                    <li>
+	                        <a href="flot.html">Flot Charts</a>
+	                    </li>
+	                    <li>
+	                        <a href="morris.html">Morris.js Charts</a>
+	                    </li>
+	                </ul>
+	                <!-- /.nav-second-level -->
+	            </li>
+	            <li>
+	                <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+	            </li>
+	            <li>
+	                <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+	            </li>
+	            <li>
+	                <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="glyphicon arrow"></span></a>
+	                <ul class="nav nav-second-level">
+	                    <li>
+	                        <a href="panels-wells.html">Panels and Wells</a>
+	                    </li>
+	                    <li>
+	                        <a href="buttons.html">Buttons</a>
+	                    </li>
+	                    <li>
+	                        <a href="notifications.html">Notifications</a>
+	                    </li>
+	                    <li>
+	                        <a href="typography.html">Typography</a>
+	                    </li>
+	                    <li>
+	                        <a href="icons.html"> Icons</a>
+	                    </li>
+	                    <li>
+	                        <a href="grid.html">Grid</a>
+	                    </li>
+	                </ul>
+	                <!-- /.nav-second-level -->
+	            </li>
+	            <li>
+	                <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="glyphicon arrow"></span></a>
+	                <ul class="nav nav-second-level">
+	                    <li>
+	                        <a href="#">Second Level Item</a>
+	                    </li>
+	                    <li>
+	                        <a href="#">Second Level Item</a>
+	                    </li>
+	                    <li>
+	                        <a href="#">Third Level <span class="glyphicon arrow"></span></a>
+	                        <ul class="nav nav-third-level">
+	                            <li>
+	                                <a href="#">Third Level Item</a>
+	                            </li>
+	                            <li>
+	                                <a href="#">Third Level Item</a>
+	                            </li>
+	                            <li>
+	                                <a href="#">Third Level Item</a>
+	                            </li>
+	                            <li>
+	                                <a href="#">Third Level Item</a>
+	                            </li>
+	                        </ul>
+	                        <!-- /.nav-third-level -->
+	                    </li>
+	                </ul>
+	                <!-- /.nav-second-level -->
+	            </li>
+	            <li>
+	                <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="glyphicon arrow"></span></a>
+	                <ul class="nav nav-second-level">
+	                    <li>
+	                        <a href="blank.html">Blank Page</a>
+	                    </li>
+	                    <li>
+	                        <a href="login.html">Login Page</a>
+	                    </li>
+	                </ul>
+	                <!-- /.nav-second-level -->
+	            </li>
+	        </ul>
+		</div>
+		<div class="logout">
+			<img src="/img/logo.png" class="user-header">
+			<span>超级管理员</span>
+			<a class="btn-logout">
+				<i class="glyphicon glyphicon-off"></i> 
+			</a>
+		</div>
+	</div>
+	<div class="dev-center">
+		  <div id="tabs">
+		  	<div class="bsui-nav">
+		  		<a class="bsui-tab-btn bsui-btn-left hide">
+		  			<i class="glyphicon glyphicon-menu-left"></i>
+	  			</a>
+	  			<ul class="nav nav-tabs" role="tablist">
+	  				<li id="bsui_tab_devTools" class="active">
+	  					<a href="#bsui_tabpanel_devTools" aria-controls="bsui_tab_devTools" role="tab" data-toggle="tab">
+  							<i class="glyphicon glyphicon-th-list"></i> 
+  							工具
+  						</a>
+					</li>
+				</ul>
+				<a class="bsui-tab-btn bsui-btn-right hide">
+					<i class="glyphicon glyphicon-menu-right"></i>
+				</a>
+			</div>
+			<div class="tab-content">
+				<div class="tab-pane active tools-panel" id="bsui_tabpanel_devTools" role="tabpanel"> 
+					<a class="tool">
+						<i class="glyphicon glyphicon-th-list"></i>
+						<span>
+							表单设计
+						</span>
+					</a> 
+					<a class="tool">
+						<i class="glyphicon glyphicon-th-list"></i>
+						<span>
+							报表设计
+						</span>
+					</a> 
+					<a class="tool">
+						<i class="glyphicon glyphicon-th-list"></i>
+						<span>
+							参照设计
+						</span>
+					</a> 
+					<a id="moduleClassManager" class="tool">
+						<i class="glyphicon glyphicon-th-list"></i>
+						<span>
+							模块分类
+						</span>
+					</a>
+					<a class="tool">
+						<i class="glyphicon glyphicon-th-list"></i>
+						<span>
+							菜单工具
+						</span>
+					</a> 
+					<a id="dataTypeManager" class="tool">
+						<i class="glyphicon glyphicon-th-list"></i>
+						<span>
+							数据类型
+						</span>
+					</a> 
+					<a class="tool">
+						<i class="glyphicon glyphicon-th-list"></i>
+						<span>
+							枚举设计
+						</span>
+					</a> 
+				</div>
+			</div>
+		  </div>
+	</div> 
+	<script type="text/javascript" src="/plugins/jquery.min.js"></script>
+	<script type="text/javascript" src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/plugins/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript" src="/plugins/metisMenu/metisMenu.min.js"></script> 
+	<script type="text/javascript" src="/plugins/layer/layer.js"></script>
+	<script type="text/javascript" src="/js/bsui.js"></script>
+	<script type="text/javascript" src="/js/bsui.tabs.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#side-menu').metisMenu({ toggle: false });
+			$('#side-menu').slimScroll({height: '100%'});
+			$('.project-manager').on('click', function(){
+				 $('#tabs').navTabs('addTab', { id: 'devTools' });
+			});
+			$('#tabs').navTabs(); 
+			$('#moduleClassManager').on('click', function(){
+				 bsui.openWindow({
+
+				 });
+			});
+			$('.sidebar-control').on('click', function(){
+				var jqWest = $('.dev-west');
+				var documentWidth = $(document).width();
+				if(jqWest.hasClass('hide')){
+					jqWest.removeClass('hide');
+					$(this).html('<i class="glyphicon glyphicon-chevron-left"></i>')
+					.css('left', '200px');
+					$('.dev-center').width('calc(100% - 200px)');
+				}
+				else{
+					jqWest.addClass('hide');
+					$('.dev-center').width('100%');
+					$(this).html('<i class="glyphicon glyphicon-chevron-right"></i>')
+					.css('left', '0px');
+				}
+			});
+			$('.btn-logout').on('click', function(){
+
+			});
+			$('#dataTypeManager').on('click', function(){
+				/* bsui.openWindow({
+				 	title: '数据类型管理',
+				 	content: '/dev/dataTypeManager'
+				 });*/
+				 $('#tabs').navTabs('addTab', {
+				 	id: 'dataTypeManager',
+				 	title: '数据类型管理',
+				 	url: '/dev/dataTypeManager'
+				 });
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{{title}}</title>
+	<link rel="stylesheet" type="text/css" href="/plugins/bootstrap/css/bootstrap.min.css"> 
+	<link rel="stylesheet" type="text/css" href="/plugins_upgrade/select2/css/select2.css">
+	<link rel="stylesheet" type="text/css" href="/plugins/prettyCheckable/disk/prettyCheckable.css">
+	<link rel="stylesheet" type="text/css" href="/css/bsui.css"> 
+</head>
+<body class="bsui-container">
+	<div class="bsui-layout-top">
+		<div class="bsui-toolbar">
+			<a href="javascript:;" class="btn btn-info btn-sm hidden-xs">
+				<i class="glyphicon glyphicon-print"></i> 
+				打印
+			</a>
+			<a href="javascript:;" class="btn btn-info btn-sm hidden-xs">
+				<i class="glyphicon glyphicon-export"></i> 
+				输出
+			</a>
+			
+			<span class="btn-separator"></span>
+			<a id="btnSave" href="javascript:;" class="btn btn-info btn-sm">
+				<i class="glyphicon glyphicon-floppy-disk"></i> 
+				保存
+			</a>
+			<a id="btnAdd" href="javascript:;" disabled class="btn btn-info btn-sm">
+				<i class="glyphicon glyphicon-plus"></i> 
+				增加
+			</a>
+			<a href="javascript:;" class="btn btn-info btn-sm">
+				<i class="glyphicon glyphicon-edit"></i> 
+				修改
+			</a>
+			<a href="javascript:;" class="btn btn-info btn-sm">
+				<i class="glyphicon glyphicon-share-alt"></i> 
+				放弃
+			</a> 
+			<a href="javascript:;" class="btn btn-info btn-sm">
+				<i class="glyphicon glyphicon-trash"></i> 
+				删除
+			</a> 
+
+			<span class="btn-separator"></span>
+
+			<a href="javascript:;" class="btn btn-info btn-sm hidden-xs">
+				<i class="glyphicon glyphicon-refresh"></i> 
+				刷新
+			</a>
+
+			
+			<div class="input-group input-group-sm pull-right hidden-xs hidden-sm" style="width:200px;">
+		      <input type="text" class="form-control" placeholder="查询关键词...">
+		      <span class="input-group-btn"> 
+		        <a href="javascript:;" class="btn btn-default" role="button">
+			        <i class="glyphicon glyphicon-search"></i>
+			        搜索
+		        </a>
+		      </span>
+		    </div> 
+			<a href="javascript:;" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">
+				<i class="glyphicon glyphicon-step-forward"></i> 
+				末张
+			</a> 
+			<a href="javascript:;" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">
+				<i class="glyphicon glyphicon-forward"></i> 
+				下张
+			</a>
+			<a href="javascript:;" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">
+				<i class="glyphicon glyphicon-backward"></i> 
+				上张
+			</a> 
+			<a href="javascript:;" class="btn btn-default btn-sm pull-right hidden-xs hidden-sm">
+				<i class="glyphicon glyphicon-step-backward"></i> 
+				首张
+			</a> 
+		</div>
+	</div>
+	
+	<div class="bsui-layout-content bsui-overflow bsui-padding-right">
+		<form class="bsui-simple-form"> 
+			<ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">基本信息</a></li>
+			    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">联系方式</a></li>
+			    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">工作相关</a></li>
+			    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">其他信息</a></li>
+		  	</ul>
+		  	<div class="tab-content">
+		  		<div role="tabpanel" class="tab-pane active" id="home">
+		  			<div class="bsui-form-row">
+						<label>*用户名:</label>
+						<div class="bsui-input-control">
+							<div class="input-group">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="bsui-form-row">
+						<label>*密码:</label>
+						<div class="bsui-input-control">
+							<div class="input-group">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="bsui-form-row">
+						<label>*确认密码:</label>
+						<div class="bsui-input-control">
+							<div class="input-group">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="bsui-form-row">
+						<label>*语音查询密码:</label>
+						<div class="bsui-input-control">
+							<div class="input-group">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="bsui-form-row">
+						<label>*语音查询密码确认:</label>
+						<div class="bsui-input-control">
+							<div class="input-group">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="bsui-form-row">
+						<label>密码保护问题:</label>
+						<div class="bsui-input-control">
+							<select class="form-control">
+							  <option value="sf">表单编辑档案</option>
+							  <option value="sef">列表编辑档案</option>
+							  <option value="msf">复杂档案</option> 
+							  <option value="a">树型分类档案</option>
+							  <option value="b">树型编辑档案</option>
+							  <option value="c">树型导航档案</option>
+							  <option value="d">单据</option>
+							</select>
+						</div>
+					</div>
+					<div class="bsui-form-row">
+						<label>密码保护答案:</label>
+						<div class="bsui-input-control">
+							<div class="input-group">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="bsui-form-row">
+						<label>*验证码:</label>
+						<div class="bsui-input-control">
+							<div class="input-group">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="bsui-form-row">
+						<label>是否成人:</label>
+						<div class="bsui-input-control">
+							<input type="checkbox" class="xxx" value="yes" id="answer" name="answer" data-label=""/>
+						</div>
+					</div>
+					<div class="bsui-form-row">
+						<label>所在部门:</label>
+						<div class="bsui-input-control">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Search for...">
+						      	<span class="input-group-btn">
+							        <a class="btn btn-default" role="button">
+							        	<i class="glyphicon glyphicon-search"></i>
+							        </a>
+						        </span>
+							</div>
+						</div>
+					</div>
+					<div class="bsui-form-row">
+						<label>备注:</label>
+						<div class="bsui-input-control">
+							<div class="input-group">
+								<textarea class="form-control"></textarea>
+							</div>
+						</div>
+					</div>
+		  		</div>
+		  		<div role="tabpanel" class="tab-pane" id="profile">.b..</div>
+			    <div role="tabpanel" class="tab-pane" id="messages">..c.</div>
+			    <div role="tabpanel" class="tab-pane" id="settings">...d</div>
+		  	</div> 
+		</form>
+	</div>
+
+	
+	<script type="text/javascript" src="/plugins/jquery.min.js"></script>
+	<script type="text/javascript" src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/plugins_upgrade/select2/js/select2.min.js"></script>
+	<script type="text/javascript" src="/plugins_upgrade/select2/js/i18n/zh-CN.js"></script>
+	<script type="text/javascript" src="/plugins/prettyCheckable/disk/prettyCheckable.min.js"></script>
+	<script type="text/javascript" src="/js/bsui.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('select').select2({
+				language:'zh-CN',
+				minimumResultsForSearch: Infinity
+			});
+			$('input.xxx').prettyCheckable();
+
+		});
+	</script>
+</body>
+</html>

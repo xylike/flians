@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{{title}}</title>
+	<link rel="stylesheet" type="text/css" href="/plugins/bootstrap/css/bootstrap.min.css"> 
+	<link rel="stylesheet" type="text/css" href="/plugins_upgrade/select2/css/select2.css">
+	<link rel="stylesheet" type="text/css" href="/plugins/prettyCheckable/disk/prettyCheckable.css">
+	<link rel="stylesheet" type="text/css" href="/plugins/zTree/css/metroStyle/metroStyle.css">
+	<link rel="stylesheet" type="text/css" href="/plugins_upgrade/mmgrid/mmGrid.css"> 
+	<link rel="stylesheet" type="text/css" href="/plugins_upgrade/mmgrid/theme/bootstrap/mmGrid-bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/css/bsui.css"> 
+
+</head>
+<body class="bsui-container">
+	<div class="bsui-layout-top">
+		<div class="bsui-toolbar">
+			<a href="javascript:;" class="btn btn-info btn-sm hidden-xs">
+				<i class="glyphicon glyphicon-print"></i> 
+				打印
+			</a>
+			<a href="javascript:;" class="btn btn-info btn-sm hidden-xs">
+				<i class="glyphicon glyphicon-export"></i> 
+				输出
+			</a>
+			
+			<span class="btn-separator"></span>
+			<a id="btnSave" href="javascript:;" class="btn btn-info btn-sm">
+				<i class="glyphicon glyphicon-floppy-disk"></i> 
+				保存
+			</a>
+			<a id="btnAdd" href="javascript:;" disabled class="btn btn-info btn-sm">
+				<i class="glyphicon glyphicon-plus"></i> 
+				增加
+			</a>
+			<a href="javascript:;" class="btn btn-info btn-sm">
+				<i class="glyphicon glyphicon-edit"></i> 
+				修改
+			</a>
+			<a href="javascript:;" class="btn btn-info btn-sm">
+				<i class="glyphicon glyphicon-share-alt"></i> 
+				放弃
+			</a> 
+			<a href="javascript:;" class="btn btn-info btn-sm">
+				<i class="glyphicon glyphicon-trash"></i> 
+				删除
+			</a> 
+
+			<span class="btn-separator"></span>
+
+			<a href="javascript:;" class="btn btn-info btn-sm hidden-xs">
+				<i class="glyphicon glyphicon-refresh"></i> 
+				刷新
+			</a> 
+		</div>
+	</div>
+	<div class="bsui-layout-content">
+		<div class="bsui-content-west">
+   			<ul id="treeDemo" class="ztree"></ul>
+		</div>
+		<div class="bsui-content-center">
+			<form class="bsui-simple-form"> 
+			  	<div class="bsui-form-row">
+				<label>*分类编码:</label>
+					<div class="bsui-input-control">
+						<div class="input-group">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="bsui-form-row">
+					<label>*密码:</label>
+					<div class="bsui-input-control">
+						<div class="input-group">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="bsui-form-row">
+					<label>*确认密码:</label>
+					<div class="bsui-input-control">
+						<div class="input-group">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="bsui-form-row">
+					<label>*确认密码:</label>
+					<div class="bsui-input-control">
+						<div class="input-group">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="bsui-form-row">
+					<label>*确认密码:</label>
+					<div class="bsui-input-control">
+						<div class="input-group">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="bsui-form-row">
+					<label>*确认密码:</label>
+					<div class="bsui-input-control">
+						<div class="input-group">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="bsui-form-row">
+					<label>*语音查询密码:</label>
+					<div class="bsui-input-control">
+						<div class="input-group">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="bsui-form-row">
+					<label>*语音查询密码确认:</label>
+					<div class="bsui-input-control">
+						<div class="input-group">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="bsui-form-row">
+					<label>密码保护问题:</label>
+					<div class="bsui-input-control">
+						<select class="form-control">
+						  <option value="AL">Alabama</option>
+						  <option value="WY">Wyoming</option>
+						</select>
+					</div>
+				</div>
+				<div class="bsui-form-row">
+					<label>密码保护答案:</label>
+					<div class="bsui-input-control">
+						<div class="input-group">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="bsui-form-row">
+					<label>*验证码:</label>
+					<div class="bsui-input-control">
+						<div class="input-group">
+							<input type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="bsui-form-row">
+					<label>是否成人:</label>
+					<div class="bsui-input-control">
+						<input type="checkbox" class="xxx" value="yes" id="answer" name="answer" data-label=""/>
+					</div>
+				</div>
+				<div class="bsui-form-row">
+					<label>所在部门:</label>
+					<div class="bsui-input-control">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search for...">
+					      	<span class="input-group-btn">
+						        <a class="btn btn-default" role="button">
+						        	<i class="glyphicon glyphicon-search"></i>
+						        </a>
+					        </span>
+						</div>
+					</div>
+				</div>
+				<div class="bsui-form-row">
+					<label>编码规则:</label>
+					<div class="bsui-input-control">
+						<div class="input-group">
+							** *** ****
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/plugins/jquery.min.js"></script>
+	<script type="text/javascript" src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/plugins_upgrade/select2/js/select2.min.js"></script>
+	<script type="text/javascript" src="/plugins_upgrade/select2/js/i18n/zh-CN.js"></script>
+	<script type="text/javascript" src="/plugins/zTree/js/jquery.zTree.core.min.js"></script>
+	<script type="text/javascript" src="/plugins_upgrade/mmgrid/mmGrid.js"></script>
+	<script type="text/javascript" src="/js/bsui.js"></script>
+	<script type="text/javascript">
+		var zTreeObj;
+	   // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
+	   var setting = {};
+	   // zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
+	   var zNodes = [
+		    {name:"语音查询密码确认", open:true, children:[
+		      	{name:"开发部", open:true, children:[
+			      	{name:"Java组"}, 
+			      	{name:"Php组"}
+		      	]}, 
+		      	{name:"营销部"}
+	      	]}
+	   ];
+	   $(function(){
+	   		$('select').select2({
+				language:'zh-CN'
+			});
+	      	zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes); 
+	   });
+	</script>
+</body>
+</html>

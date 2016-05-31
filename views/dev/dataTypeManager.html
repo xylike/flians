@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{{title}}</title>
+	<link rel="stylesheet" type="text/css" href="/plugins/bootstrap/css/bootstrap.min.css"> 
+	<link rel="stylesheet" type="text/css" href="/plugins_upgrade/select2/css/select2.css">
+ 
+	<link rel="stylesheet" type="text/css" href="/plugins/datepicker/css/bootstrap-datepicker3.min.css"> 
+	<link rel="stylesheet" type="text/css" href="/plugins/datetimepicker/css/bootstrap-datetimepicker.min.css">
+
+	<link rel="stylesheet" type="text/css" href="/plugins/icheck/skins/all.css">
+
+	<link rel="stylesheet" type="text/css" href="/plugins_upgrade/mmgrid/mmGrid.css">  
+	<link rel="stylesheet" type="text/css" href="/css/bsui.css"> 
+
+</head>
+<body class="bsui-container">
+	<div class="bsui-layout-top">
+		<div class="bsui-toolbar">   
+			<a id="btnAdd" href="javascript:;" class="btn btn-info btn-sm">
+				<i class="glyphicon glyphicon-plus"></i> 
+				增加
+			</a>  
+			<a href="javascript:;" class="btn btn-info btn-sm">
+				<i class="glyphicon glyphicon-trash"></i> 
+				删除
+			</a> 
+
+			<span class="btn-separator"></span>
+
+			<a href="javascript:;" class="btn btn-info btn-sm hidden-xs">
+				<i class="glyphicon glyphicon-refresh"></i> 
+				刷新
+			</a> 
+		</div>
+	</div>
+	<div class="bsui-layout-content bsui-overflow bsui-padding-right">   
+	    	<table id="gridView"></table>  
+	</div>
+
+	<script type="text/javascript" src="/plugins/jquery.min.js"></script>
+	<script type="text/javascript" src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/plugins/layer/layer.js"></script>
+	<script type="text/javascript" src="/plugins/datepicker/js/bootstrap-datepicker.min.js"></script> 
+	<script type="text/javascript" src="/plugins/datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+	<script type="text/javascript" src="/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="/plugins/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+	<script type="text/javascript" src="/plugins_upgrade/select2/js/select2.min.js"></script>
+	<script type="text/javascript" src="/plugins_upgrade/select2/js/i18n/zh-CN.js"></script> 
+	<script type="text/javascript" src="/plugins/icheck/icheck.js"></script>
+	<script type="text/javascript" src="/plugins_upgrade/mmgrid/mmGrid.js"></script>
+ 
+	<script type="text/javascript" src="/js/bsui.js"></script>
+	<script type="text/javascript">
+		 
+	   $(function(){ 
+	   		var columns = {{{viewData.columns}}}; 
+	   		var gridColumns = [];
+	   		// console.log(columns);
+	   		$.each(columns, function(i, item){
+	   			gridColumns.push({title: item.cFieldDesc, name: item.cFieldName, align:(item.cDataType==='int' ? 'right' : 'left')});
+	   			/*if(item.bIsHidden===true) return;
+	   			if(item.cCtrlType === 'text' || item.cCtrlType === 'number'){
+	   				var textboxOpts = {
+			   			id: item.cFieldName,
+			   			name: item.cFieldName,
+			   			labelName: item.cFieldDesc,
+			   			required: (item.bIsNull === false)
+			   		}; 
+	   				bsui.textbox($('.bsui-form-inline'), textboxOpts)
+	   			}
+	   			else if(item.cCtrlType === 'radio'){
+	   				var data = JSON.parse(item.cCtrlData);
+	   				bsui.radiolist($('.bsui-form-inline'), {
+			   			id: item.cFieldName,
+			   			name: item.cFieldName,
+			   			labelName: item.cFieldDesc,
+			   			required: (item.bIsNull === false),
+			   			data: data
+			   		});
+	   			}*/
+	   		});  
+		    
+		    $('#btnAdd').on('click', function(){
+		    	bsui.openWindow({
+		    		title: '增加类型',
+		    		content: '/dev/dataTypeAdd',
+		    		 area: ['750px', '530px'],
+		    	});
+		    });
+
+		    //本地示例
+		    $('#gridView').mmGrid({
+		    	indexCol:true,
+		    	checkCol:false,
+		    	multiSelect:true,
+		    	fullWidthRows:true,
+		    	height:'auto',
+		    	showBackboard:false,
+		        cols: gridColumns,
+		        items: []
+		    });  
+	   });
+	</script>
+</body>
+</html>

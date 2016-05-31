@@ -1,0 +1,131 @@
+body{
+	overflow: hidden;
+}
+.dev-west{
+	width:200px; 
+	height: 100%; 
+	background-color: #354052; 
+	float: left;
+}
+.dev-center{
+	width:calc(100% - 200px); 
+	float: left; 
+	height: 100%;
+}
+.dev-logo{
+	height: 80px; 
+	width: 100%; 
+	background-image:url('/img/logo2.png');
+}
+.dev-menu{
+	height: calc(100% - 132px); 
+	width: 100%;
+	color: #d0d0d0;
+} 
+.logout{
+	height: 52px; 
+	line-height: 52px;
+	width: 100%; 
+	padding-left: 15px;
+	color: #d0d0d0; 
+	background-color: #2F3847;
+	position: relative;
+} 
+.btn-logout{
+	color: #d0d0d0;  
+	display: block;
+	float: right;
+	margin-top: 3px;
+	margin-right:15px;
+	cursor: pointer; 
+}
+.user-header{
+	width: 32px;
+	height: 32px;
+	background-color: #fff;
+	border-radius: 50px;
+}
+a.btn-logout:hover{
+	text-decoration: none;
+	color: #fff;  
+}
+.dev-toolbar{
+	height: 42px;
+	width: 100%; 
+	border-bottom: 1px solid #dfdfdf;
+	padding: 5px 20px;
+}
+.dev-content{
+	width: 100%;
+	height: calc(100% - 42px); 
+	padding: 5px 20px;
+}
+
+.nav-second-level li,
+.nav-third-level li {
+    border-bottom: 0!important;
+}
+
+.nav-second-level li a {
+    padding-left: 37px;
+}
+
+.nav-third-level li a {
+    padding-left: 52px;
+}
+.arrow {
+    float: right;
+}
+.glyphicon.arrow:before {
+	content: "\e080";
+}
+.active>a>.glyphicon.arrow:before {
+    content: "\e114";
+}
+.dev-menu a{
+	color: #d0d0d0;
+	cursor: default;
+}
+.dev-menu a:hover,
+.dev-menu a:focus,
+.dev-menu .active>a:focus{
+	color: #555; 
+}
+
+.tools-panel{
+	padding: 10px;
+}
+a.tool{
+	width: 100px;
+	height: 100px;
+	background-color: #fff;
+	display: inline-block;
+	margin-bottom: 10px;
+	margin-right: 5px; 
+	background-color: #f2f2f2;
+	cursor: pointer;
+	text-decoration: none;
+	text-align: center;
+	border-radius: 10px;
+}
+a.tool > i{
+	font-size: 50px;
+	margin-top: 13px;
+}
+a.tool > span{
+	display: block;
+	margin-top: 5px;
+}
+.sidebar-control{
+	display: block; 
+	position: absolute; 
+	z-index: 9999; 
+	left: 200px; 
+	bottom:0; 
+	height: 52px; 
+	line-height: 52px; 
+	width: 16px; 
+	background-color: #dfdfdf;
+	cursor: pointer;
+	color: #555;
+}
