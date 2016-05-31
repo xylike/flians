@@ -13,7 +13,7 @@
             type: 2,
             title: '标题',
             maxmin:false,
-            shadeClose:true,
+            shadeClose:false,
             scrollbar:false,
             area: ['650px', '500px'],
             content: '/error'
@@ -37,7 +37,7 @@
             type: 2,
             title: '标题',
             maxmin:false,
-            shadeClose:true,
+            shadeClose:false,
             scrollbar:false,
             area: ['750px', '530px'],
             content: '/error'
@@ -61,7 +61,7 @@
             type: 2,
             title: '标题',
             maxmin:false,
-            shadeClose:true,
+            shadeClose:false,
             scrollbar:false,
             area: ['700px', '500px'],
             content: '/error'
@@ -108,7 +108,8 @@
             'placeholder': options.placeholder,
             'data-labelname': options.labelName,
             'data-required': options.required,
-            'data-requiredtext': options.requiredText
+            'data-requiredtext': options.requiredText,
+            'aria-type': 'textbox'
         });
         obj.append('\n\r').append(
             $('<div>',{
@@ -335,7 +336,7 @@
             width: 180,
             labelWidth: 120,
             placeholder: '',
-            allowClear: false,
+            allowClear: true,
             data: [],
             allowAjax: false,
             url: '',
@@ -355,7 +356,8 @@
             'value': options.value,
             'data-labelname': options.labelName,
             'data-required': options.required,
-            'data-requiredtext': options.requiredText
+            'data-requiredtext': options.requiredText,
+            'aria-type': 'selectbox'
         });
         var jqLabel =  $('<label>', {
             'for': options.id,
@@ -370,7 +372,7 @@
                 'style': 'width: ' + options.width + 'px;'
             }).append(
                  $('<div>', {
-                    'class': 'input-group input-group-sm', 
+                    'class': 'input-group input-group-sm bsui-select2-' + options.id, 
                 }).append(jqSelect)
             )
         );
@@ -379,7 +381,7 @@
             language: 'zh-CN',
             minimumResultsForSearch: Infinity,
             allowClear: options.allowClear,
-            multiple: options.multiple           
+            multiple: options.multiple        
         };
         if(options.allowAjax){
             selectOptions.ajax = {
@@ -402,6 +404,22 @@
         jqSelect.select2(selectOptions);
         jqSelect.val(options.value);
         jqSelect.trigger('change.select2'); 
+        jqSelect.on('select2:opening', function(evt){
+            var next = jqSelect.next();
+            if(next.hasClass('required'))
+                next.removeClass('required');
+        });
+        jqSelect.on('select2:close', function(evt){
+            if($.trim(jqSelect.val()) === ''){ 
+                var next = jqSelect.next();
+                if(!next.hasClass('required'))
+                    next.addClass('required');
+            }
+        });
+        $('#select2-' + options.id + '-container').removeAttr('title');
+        jqLabel.on('click', function(){
+            jqSelect.trigger('select2:close'); 
+        });
     };
     bsui.checkbox = function(obj, options){
         options = $.extend({
@@ -613,18 +631,33 @@
          $('#' + id).attr('disabled', false).on('click', callback);
     };
     bsui.validations = function(formObj){
-        var errmsg = '';
+        var isAllow = true;
         var controls = formObj.find('[data-required]');
         $.each(controls, function(i, control){
             var jqThis = $(control);
             var required = jqThis.data('required');
             if(required){
                 var value = $.trim(jqThis.val());
-                if(value===''){
-                    errmsg += '<span style="color:#b00;">[' + jqThis.data('labelname') + ']</span> ' + jqThis.data('requiredtext') + '<br/>';
+                if(value===''){ 
+                    if(jqThis.attr('aria-type') === 'textbox'){
+                        jqThis.addClass('required');
+                        layer.tips(jqThis.data('requiredtext'), '#' + this.id, {
+                          tipsMore: true,
+                          tips: [2, '#f76054']
+                        });
+                    }
+                    else if(jqThis.attr('aria-type') === 'selectbox'){  
+                        jqThis.next().addClass('required');
+                        layer.tips(jqThis.data('requiredtext'), '.bsui-select2-' + this.id, {
+                          tipsMore: true,
+                          tips: [2, '#f76054']
+                        });
+                    }
+                    isAllow = false;
+                    // errmsg += '<span style="color:#b00;">[' + jqThis.data('labelname') + ']</span> ' + jqThis.data('requiredtext') + '<br/>';
                 }
             }
         }); 
-        return errmsg;
+        return isAllow;
     };
 })(jQuery, window);

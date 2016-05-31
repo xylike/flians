@@ -136,11 +136,9 @@
 
 
 	   		var onclick_btnSave = function(){
-	   			var errmsg = bsui.validations($('.bsui-simple-form'));
-	   			if(errmsg !== ''){
-	   				layer.msg(errmsg, {icon: 2});
-	   			}
-	   			return;
+	   			var isAllow = bsui.validations($('.bsui-simple-form'));
+	   			if(!isAllow) return;
+
 	   			var me = this;
 	   			$('.bsui-simple-form').ajaxSubmit({
 	   				type: 'POST',

@@ -66,6 +66,7 @@ label{
     border-radius: 0 !important;
     outline: none !important;
     height:34px !important; 
+    cursor: default !important; 
     > span{
         &.select2-selection__rendered{
             height:34px !important;
@@ -83,6 +84,11 @@ label{
     &.select2-container--focus{
         .select2-selection--single, .select2-selection--multiple{
              border-color:#0099CC !important;
+        }
+    }
+    &.required{
+        .select2-selection--single, .select2-selection--multiple{
+             border-color:#f76054 !important;
         }
     }
 }

@@ -116,7 +116,7 @@ Object.defineProperty(sysDataType.prototype, 'columns', {
 				cDataType: 'varchar',
 				iDataLength: 255,
 				cDefaultValue: '',
-				cCtrlType: 'text'
+				cCtrlType: 'text' 
 			}
 		];
 	}
