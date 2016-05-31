@@ -31,3 +31,11 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
+
+
+config.js
+credentials.js
+public/plugins
+public/plugins_upgrade
+bin
+test
